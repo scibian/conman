@@ -1,0 +1,36 @@
+Source: conman
+Priority: optional
+Maintainer: Mehdi Dogguy <mehdi@debian.org>
+Build-Depends:
+ debhelper (>= 8),
+# dpkg-dev (>= 1.16.1~),
+ libwrap0-dev,
+ libipmiconsole-dev,
+ libfreeipmi-dev (>= 1.1.5-3~bpo6)
+Standards-Version: 3.9.3
+Section: doc
+Homepage: http://conman.googlecode.com/
+
+Package: conman
+Architecture: any
+Depends:
+ ${shlibs:Depends},
+ ${misc:Depends},
+ expect
+Description: serial console management program
+ This package contains a serial console management program designed to
+ support a large number of console devices and simultaneous users.
+ .
+ It supports:
+  - local serial devices
+  - remote terminal servers (via the telnet protocol)
+  - IPMI Serial-Over-LAN (via FreeIPMI)
+  - Unix domain sockets
+  - external processes (e.g., using Expect for telnet, ssh, ipmi-sol
+  connections)
+ .
+ Its features include:
+  - logging (and optionally timestamping) console device output to file
+  - connecting to consoles in monitor (R/O) or interactive (R/W) mode
+  - allowing clients to share or steal console write privileges
+  - broadcasting client output to multiple consoles.

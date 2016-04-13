@@ -1,0 +1,5 @@
+W: conman: new-package-should-close-itp-bug
+I: conman: hyphen-used-as-minus-sign usr/share/man/man5/conman.conf.5.gz:88
+I: conman: hyphen-used-as-minus-sign usr/share/man/man5/conman.conf.5.gz:160
+W: conman: executable-not-elf-or-script usr/lib/conman/alpha.exp
+W: conman: executable-not-elf-or-script usr/lib/conman/conman.exp
