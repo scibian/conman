@@ -1,6 +1,6 @@
 Source: conman
 Priority: optional
-Maintainer: Mehdi Dogguy <mehdi@debian.org>
+Maintainer: Scibian Project <packaging@scibian.org>
 Build-Depends:
  debhelper (>= 8),
 # dpkg-dev (>= 1.16.1~),
@@ -10,6 +10,8 @@ Build-Depends:
 Standards-Version: 3.9.3
 Section: doc
 Homepage: http://conman.googlecode.com/
+Vcs-Git: https://github.com/scibian/conman.git
+Vcs-Browser: https://github.com/scibian/conman
 
 Package: conman
 Architecture: any
