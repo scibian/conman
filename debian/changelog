@@ -1,3 +1,9 @@
+conman (0.2.7-2sci8u1) scibian8; urgency=medium
+
+  * Scibian8 rebuild
+
+ -- Thomas Hamel <thomas-externe.hamel@edf.fr>  Mon, 11 Dec 2017 17:39:11 +0100
+
 conman (0.2.7-2) calibre9; urgency=low
 
   * This release is for calibre9.
