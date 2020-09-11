@@ -1,24 +1,43 @@
 ConMan is a serial console management program designed to support a large
 number of console devices and simultaneous users.
 
-It supports:
-  - local serial devices
-  - remote terminal servers (via the telnet protocol)
-  - IPMI Serial-Over-LAN (via FreeIPMI)
-  - Unix domain sockets
-  - external processes (eg, using Expect for telnet/ssh/ipmi-sol connections)
+Supported console types:
+- Local serial devices
+- Remote terminal servers (via the telnet protocol)
+- IPMI Serial-Over-LAN (via FreeIPMI's libipmiconsole)
+- External processes (e.g., Expect)
+- Unix domain sockets
 
-Its features include:
-  - logging (and optionally timestamping) console device output to file
-  - connecting to consoles in monitor (R/O) or interactive (R/W) mode
-  - allowing clients to share or steal console write privileges
-  - broadcasting client output to multiple consoles
+Features:
+- Mapping symbolic names to console devices
+- Logging (and optionally timestamping) console output to file
+- Connecting to a console in monitor (R/O) or interactive (R/W) mode
+- Connecting to multiple consoles for broadcasting (W/O) client output
+- Sharing a console session amongst multiple simultaneous clients
+- Allowing clients to share or steal console "write" privileges
+- Executing Expect scripts across multiple consoles in parallel
+
 
 License:
+
   ConMan is free software: you can redistribute it and/or modify it under
   the terms of the GNU General Public License as published by the Free
   Software Foundation, either version 3 of the License, or (at your option)
   any later version.
 
+
+Keys:
+
+  Releases are signed with the following GPG key:
+
+  pub   4096R/0x3B7ECB2B30DE0871 2011-10-01
+        Key fingerprint = A441 880C 3D4C 7C36 C5DD  41E1 3B7E CB2B 30DE 0871
+  uid                            Chris Dunlap <chris.m.dunlap@gmail.com>
+  uid                            Chris Dunlap <cdunlap@llnl.gov>
+  uid                            Chris Dunlap <dun@imsa.edu>
+  sub   4096R/0x48A5CADDECA74B8A 2011-10-01
+
+
 Homepage:
-  http://conman.googlecode.com/
+
+  https://dun.github.io/conman/

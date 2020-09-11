@@ -1,13 +1,11 @@
 /*****************************************************************************
- *  $Id: list.c 1033 2011-04-06 21:53:48Z chris.m.dunlap $
- *****************************************************************************
  *  Written by Chris Dunlap <cdunlap@llnl.gov>.
- *  Copyright (C) 2007-2011 Lawrence Livermore National Security, LLC.
+ *  Copyright (C) 2007-2018 Lawrence Livermore National Security, LLC.
  *  Copyright (C) 2001-2007 The Regents of the University of California.
  *  UCRL-CODE-2002-009.
  *
  *  This file is part of ConMan: The Console Manager.
- *  For details, see <http://conman.googlecode.com/>.
+ *  For details, see <https://dun.github.io/conman/>.
  *
  *  ConMan is free software: you can redistribute it and/or modify it under
  *  the terms of the GNU General Public License as published by the Free
@@ -185,7 +183,7 @@ List list_create(ListDelF f)
     l->fDel = f;
     l->count = 0;
     list_mutex_init(&l->mutex);
-    assert(l->magic = LIST_MAGIC);      /* set magic via assert abuse */
+    assert((l->magic = LIST_MAGIC));    /* set magic via assert abuse */
     return(l);
 }
 
@@ -202,7 +200,7 @@ void list_destroy(List l)
     while (i) {
         assert(i->magic == LIST_MAGIC);
         iTmp = i->iNext;
-        assert(i->magic = 1);           /* clear magic via assert abuse */
+        assert((i->magic = 1));         /* clear magic via assert abuse */
         list_iterator_free(i);
         i = iTmp;
     }
@@ -214,7 +212,7 @@ void list_destroy(List l)
         list_node_free(p);
         p = pTmp;
     }
-    assert(l->magic = 1);               /* clear magic via assert abuse */
+    assert((l->magic = 1));             /* clear magic via assert abuse */
     list_mutex_unlock(&l->mutex);
     list_mutex_destroy(&l->mutex);
     list_free(l);
@@ -452,7 +450,7 @@ ListIterator list_iterator_create(List l)
     i->iNext = l->iNext;
     l->iNext = i;
     list_mutex_unlock(&l->mutex);
-    assert(i->magic = LIST_MAGIC);      /* set magic via assert abuse */
+    assert((i->magic = LIST_MAGIC));    /* set magic via assert abuse */
     return(i);
 }
 
@@ -486,7 +484,7 @@ void list_iterator_destroy(ListIterator i)
         }
     }
     list_mutex_unlock(&i->list->mutex);
-    assert(i->magic = 1);               /* clear magic via assert abuse */
+    assert((i->magic = 1));             /* clear magic via assert abuse */
     list_iterator_free(i);
     return;
 }
