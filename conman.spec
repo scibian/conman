@@ -1,6 +1,6 @@
 Name:		conman
 Version:	0.3.0
-Release:	1%{?dist}
+Release:	1%{?dist}_1.edf
 
 Summary:	ConMan: The Console Manager
 Group:		Applications/System
@@ -9,7 +9,7 @@ URL:		https://dun.github.io/conman/
 Source0:	https://github.com/dun/conman/releases/download/%{name}-%{version}/%{name}-%{version}.tar.xz
 
 BuildRequires:	freeipmi-devel >= 1.0.4
-BuildRequires:	tcp_wrappers-devel
+
 BuildRequires:	systemd
 Requires:	expect
 Requires(post): systemd
@@ -81,3 +81,7 @@ rm -rf "%{buildroot}"
 %{_prefix}/lib/*
 %{_mandir}/*/*
 %{_unitdir}/conman.service
+
+%changelog
+* Tue Sep 14 2020 Pierre Trespeuch <pierre-externe.trespeuch@edf.fr> 0.3.0-1.el8_1.edf
+- Initial rpm release
